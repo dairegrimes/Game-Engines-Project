@@ -40,12 +40,14 @@ bool Animat::Initialise()
 	speed =			0.5;
 
 
+	// Main body
 	shared_ptr<PhysicsController> body = physicsFactory->CreateBox(8, 5, 40, glm::vec3(0, 0, 0), glm::quat());
 
+	// Head
 	shared_ptr<PhysicsController> head = physicsFactory->CreateBox(8, 5, 5, glm::vec3(0, 7, 17), glm::quat());
 	btHingeConstraint * hinge5 = new btHingeConstraint(*body->rigidBody, *head->rigidBody, btVector3(0, 7, 17), btVector3(0, 2, 0), btVector3(0, 0, 0), btVector3(1, 0, 0), true);
 
-
+	// Legs and their hinges
 	shared_ptr<PhysicsController> leg1 = physicsFactory->CreateBox(3, 10, 1, glm::vec3(9, 0, legPos1), glm::quat());
 	btHingeConstraint * hinge1 = new btHingeConstraint(*body->rigidBody, *leg1->rigidBody, btVector3(9, 0, legPos1), btVector3(0, 2, 0), btVector3(0, 0, 0), btVector3(1, 0, 0), true);
 
