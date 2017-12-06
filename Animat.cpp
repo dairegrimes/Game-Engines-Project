@@ -34,10 +34,10 @@ bool Animat::Initialise()
 	Game::dynamicsWorld->setGravity(btVector3(0, -20, 0));
 	physicsFactory->CreateGroundPhysics();
 	physicsFactory->CreateCameraPhysics();
-	float legPos1 = 18;
-	float wheelPos = 14;
-	float spin = 100;
-	speed = 0.5;
+	legPos1 =		18;
+	wheelPos =		14;
+	spin =			100;
+	speed =			0.5;
 
 
 	shared_ptr<PhysicsController> body = physicsFactory->CreateBox(8, 5, 40, glm::vec3(0, 0, 0), glm::quat());

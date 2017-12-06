@@ -12,6 +12,9 @@ namespace BGE
 	private:
 
 		float speed;
+		float legPos1;
+		float wheelPos;;
+		float spin;
 		
 	public:
 		Animat(void);
